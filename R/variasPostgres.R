@@ -10,7 +10,7 @@
 dbGetTable = function(
 
   table,
-  host = Sys.getenv("POSTGRES_URL"),
+  host = Sys.getenv("POSTGRES_HOST"),
   port = Sys.getenv("POSTGRES_PORT"),
   dbname = Sys.getenv("POSTGRES_DB"),
   user = Sys.getenv("POSTGRES_USER"),
@@ -63,7 +63,7 @@ dbGetTable = function(
 #'
 dbExecuteQuery = function(
     query,
-    host = Sys.getenv("POSTGRES_URL"),
+    host = Sys.getenv("POSTGRES_HOST"),
     port = Sys.getenv("POSTGRES_PORT"),
     dbname = Sys.getenv("POSTGRES_DB")
 
@@ -90,7 +90,7 @@ dbExecuteQuery = function(
 dbWriteDF = function(
     table,
     df,
-    host = Sys.getenv("POSTGRES_URL"),
+    host = Sys.getenv("POSTGRES_HOST"),
     port = Sys.getenv("POSTGRES_PORT"),
     dbname = Sys.getenv("POSTGRES_DB")
 ) {
@@ -120,7 +120,7 @@ dbWriteDF = function(
 #'
 #' @examples con <- dbConnectP()
 #'
-dbConnectP = function(  host = Sys.getenv("POSTGRES_URL"),
+dbConnectP = function(  host = Sys.getenv("POSTGRES_HOST"),
                         port = Sys.getenv("POSTGRES_PORT"),
                         dbname = Sys.getenv("POSTGRES_DB")) {
   require(RPostgreSQL)
