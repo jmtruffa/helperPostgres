@@ -75,7 +75,7 @@ dbExecuteQuery = function(
   require(DBI)
   # obtain user+pass from environment variables
   user = Sys.getenv("POSTGRES_USER")
-  password = Sys.getenv("POSTGRES_PASS")
+  password = Sys.getenv("POSTGRES_PASSWORD")
   con <- dbConnect(PostgreSQL(), host = host, port = port, dbname = dbname, user = user, password = password)
   retQuery = dbGetQuery(con, query)
   dbDisconnect(con)
@@ -130,7 +130,7 @@ dbConnectP = function(  host = Sys.getenv("POSTGRES_HOST"),
 
   # obtain user+pass from environment variables
   user <- Sys.getenv("POSTGRES_USER")
-  password <- Sys.getenv("POSTGRES_PASS")
+  password <- Sys.getenv("POSTGRES_PASSWORD")
 
   # Default parameters used in to_sql function
 
