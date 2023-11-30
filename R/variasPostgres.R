@@ -17,10 +17,12 @@ dbGetTable = function(
   password = Sys.getenv("POSTGRES_PASSWORD")
 ) {
 
-  require(RPostgreSQL)
-  require(dplyr)
-  require(DBI)
-
+  suppressPackageStartupMessages({
+    # Load required packages without displaying messages
+    require(RPostgreSQL)
+    require(DBI)
+    require(dplyr)
+  })
 
   if (is.null(table)) {
 
